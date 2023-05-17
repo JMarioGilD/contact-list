@@ -11,9 +11,8 @@
       
       /* 3. Crea una función para borrar un contacto existente de la lista */
       let eliminarContacto = function(contacto){
-          let indice = contactos.indexOf(contacto);
-          contactos.splice(indice, 1)
-      }
+        contactos = contactos.filter((persona)=> persona !== contacto);
+    }
       
       eliminarContacto('Kent Nelson')
       
