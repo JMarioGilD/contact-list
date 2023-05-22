@@ -4,7 +4,7 @@ let misContactos = [
             "id": 110071963,
             "nombre": 'Stephen Vincent',
             "apellido": 'Strange',
-            "celular": 7181516420,
+            "teléfono": 7181516420,
             "ubicacion": {"ciudad": 'Nueva York', "dirección": '177A Bleecker Street en Greenwich Village'},
      
     },
@@ -12,18 +12,18 @@ let misContactos = [
             "id": 10535693,
             "nombre": 'Wanda',
             "apellido": 'Maximoff',
-            "celular": 5511618192,
+            "teléfono": 5511618192,
             "ubicacion": { "ciudad": 'Westview', 'dirección': '195o Reality Street' }
     }
     ];
     
     /* Crear nuevo contacto a la lista */
-    const agregarContacto = (id, nombre, apellido, celular, ciudad, dirección) =>{
+    const agregarContacto = (id, nombre, apellido, teléfono, ciudad, dirección) =>{
     let nuevoContacto = {
         "id": id,
         "nombre": nombre,
         "apellido": apellido,
-        "celular": celular,
+        "teléfono": teléfono,
         "ubicacion": {"ciudad": ciudad, "dirección": dirección}
     };
     misContactos.unshift(nuevoContacto);
