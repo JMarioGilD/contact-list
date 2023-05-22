@@ -1,30 +1,48 @@
-/* 1. Crea una lista de contactos con datos predefinidos, cada contacto debe contener el nombre y apellido 
-      como una sola cadena de caracteres. */
-      let contactos = ['Steven Strange', 'Wanda Maximoff', 'Zatanna Zatara', 'Kent Nelson', 'Willow Rosenberg'];
-
-      /* 2. Crea una función para añadir un nuevo contacto a una lista */
-      function agregarContacto(contacto){
-          contactos.push(contacto);
-      }
-      
-      agregarContacto('Rachel Roth');
-      
-      /* 3. Crea una función para borrar un contacto existente de la lista */
-      let eliminarContacto = function(contacto){
-          let indice = contactos.indexOf(contacto);
-          contactos.splice(indice, 1)
-      }
-      
-      eliminarContacto('Kent Nelson')
-      
-      console.log(contactos)
-      
-      /* 4. Crea una función para imprimir en consola los contactos presentes en la lista */
-      let mostrarContactos = () => {
-          contactos.sort();
-          for (let i = 0; i < contactos.length; i++) {
-              console.log(contactos[i]);
+/* Creando lista de contacto */
+let misContactos = [
+    {
+            "id": 110071963,
+            "nombre": 'Stephen Vincent',
+            "apellido": 'Strange',
+            "celular": 7181516420,
+            "ubicacion": {"ciudad": 'Nueva York', "dirección": '177A Bleecker Street en Greenwich Village'},
+     
+    },
+    {
+            "id": 10535693,
+            "nombre": 'Wanda',
+            "apellido": 'Maximoff',
+            "celular": 5511618192,
+            "ubicacion": { "ciudad": 'Westview', 'dirección': '195o Reality Street' }
+    }
+    ];
+    
+    /* Crear nuevo contacto a la lista */
+    const agregarContacto = (id, nombre, apellido, celular, ciudad, dirección) =>{
+    let nuevoContacto = {
+        "id": id,
+        "nombre": nombre,
+        "apellido": apellido,
+        "celular": celular,
+        "ubicacion": {"ciudad": ciudad, "dirección": dirección}
+    };
+    misContactos.unshift(nuevoContacto);
+    }
+    
+    agregarContacto("371985988","John","Constantine","15150292200","Liverpool","Desconocida");
+    
+    /* Eliminar un contacto de la lista */
+    const  eliminaContactoId = (IdEliminar) => {
+            let indiceId = misContactos.findIndex(indiceId => indiceId.id == IdEliminar);
+                misContactos.splice(indiceId,1);
+                return misContactos;
           }
-      }
-      
-      mostrarContactos()
+    
+          console.log(eliminaContactoId(10535693));
+    
+    /* imprimo la lista de mis contaactos */
+          const imprimeLista = () => {
+            console.log(misContactos);
+          }
+    
+          imprimeLista();
